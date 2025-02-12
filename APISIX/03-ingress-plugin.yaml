@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: hello-v1-apisix
   annotations:
+    k8s.apisix.apache.org/enable-response-rewrite: "true"
     k8s.apisix.apache.org/response-rewrite-set-header: "testkey1:testval1"
 spec:
   ingressClassName: apisix # This line is required to use Apisix instead of Nginx
